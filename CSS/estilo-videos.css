@@ -170,7 +170,7 @@ color: rgba(255, 255, 255, 0.5);
 #news-videos hr{
   border: #FDE192 solid 4px;
   width: 200px;
-  margin: 0 auto;
+  margin: 10 auto;
 }
 #news h2 {
   color: #5E2799;
@@ -210,7 +210,6 @@ color: rgba(255, 255, 255, 0.5);
 }
 video{
   width: 50%;
-  margin: 10px 290px;
   align: center;
 }
 #estatisticas{
