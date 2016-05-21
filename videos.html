@@ -2,11 +2,14 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width:device-width, initial-scale=1">
   <title>Orlando City</title>
   <link rel="stylesheet" href="LIB/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="LIB/plyr/dist/plyr.css">
   <link rel="stylesheet" href="LIB/owl.carousel/assets/owl.carousel.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="CSS/estilo-videos.css">
+  <link rel="stylesheet" href="CSS/orlando.css">
 </head>
 <body>
   <header>
@@ -71,7 +74,9 @@
         <hr>
       </div>
       <div class="row">
-        <video src="VIDEOS/MLS Highlights.mp4" controls poster="IMG/East_Big.jpg"></video>
+        <div class="plyr">
+          <video src="VIDEOS/MLS Highlights.mp4" controls poster="IMG/East_Big.jpg"></video>
+        </div>
         <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
         <button type="button" id="btn-play-pause" class="btn btn-success">PLAY</button>
     </div>
@@ -226,9 +231,24 @@
 
 
   <script src="LIB/jquery/jquery-1.12.3.min.js"></script>
+    <script src="LIB/plyr/dist/plyr.js"></script>
   <script src="LIB/owl.carousel/owl.carousel.min.js"></script>
   <script src="LIB/bootstrap/js/bootstrap.min.js"></script>
   <script src="JS/efeitos.js"></script>
+  <script>
+  (function(d, p){
+      var a = new XMLHttpRequest(),
+          b = d.body;
+      a.open('GET', p, true);
+      a.send();
+      a.onload = function() {
+          var c = d.createElement('div');
+          c.setAttribute('hidden', '');
+          c.innerHTML = a.responseText;
+          b.insertBefore(c, b.childNodes[0]);
+      };
+  })(document, "LIB/plyr/dist/plyr.svg");
+  </script>
   <script>
     $(function(){
       $(".thumbnails .item").on("click", function(){
@@ -254,7 +274,8 @@
         }
           $(this).toggleClass("btn-success btn-danger");
       });
+      plyr.setup();
     });
   </script>
-</body>
+  </body>
 </html>
