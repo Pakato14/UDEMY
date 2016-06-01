@@ -103,6 +103,7 @@ header .header-black li a{
 header #logo{
   position: absolute;;
   top: 35px;
+  z-index: 3;
 }
 #banner h1.efeito{
   color: red;
@@ -304,6 +305,7 @@ footer{
 }
 footer .row{
   width: 100%;
+  margin-left: 0;
   line-height: 20px;
 }
 footer .row p {
@@ -311,7 +313,7 @@ footer .row p {
   margin-bottom: 0;
 }
 footer .row-cinza-claro{
-  height: 200px;
+  height: 240px;
   background-color: #171F26;
 }
 footer .row-cinza-escuro{
@@ -408,6 +410,9 @@ footer .list-socials i {
   font-size: 16px;
   margin: 7px auto;
 }
-#btn-bars, #btn-search {
+#btn-bars, #btn-search, #btn-news-prev, #btn-news-next {
   display: none;
+}
+.page-up {
+  display: none!important;
 }
